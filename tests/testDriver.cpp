@@ -101,6 +101,10 @@ void testNonAlphabetic() {
     check("digits are unchanged",
           encrypt("244", 13), "244");
 
+
+      check("digits are unchanged",
+          encrypt("2448472", 26), "2448472");
+
     check("punctuation and spaces are unchanged",
           encrypt("a b!c", 0), "a b!c");
 
@@ -165,7 +169,7 @@ void testEdgeShifts() {
 int main() {
     testEncrypt();
     testDecrypt();
-//     testNonAlphabetic();
+    testNonAlphabetic();
 //     testCase();
 //     testRoundTrip();
     testEdgeShifts();
