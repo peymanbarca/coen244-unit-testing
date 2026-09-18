@@ -24,10 +24,10 @@ int wrap(int value) {
 /* Shift a single character. Non-letters are returned unchanged. */
 char shiftChar(char c, int shift) {
     if (c >= 'a' && c <= 'z') {
-        return static_cast<char>('a' + wrap((c - 'a') + shift));
+        return static_cast<char>('a' + wrap((c  - 'a') + shift));
     }
     if (c >= 'A' && c <= 'Z') {
-        return static_cast<char>('A' + wrap((c - 'A') + shift));
+        return static_cast<char>('A' + wrap((c  - 'A') + shift));
     }
     return c;
 }

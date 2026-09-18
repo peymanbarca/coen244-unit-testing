@@ -108,6 +108,9 @@ void testNonAlphabetic() {
     check("punctuation and spaces are unchanged",
           encrypt("a b!c", 0), "a b!c");
 
+      check("punctuation and spaces are unchanged",
+          encrypt("a b!c", 2), "c d!e");
+
     check("empty string stays empty",
           encrypt("", 13), "");
 }
@@ -119,6 +122,10 @@ void testCase() {
 
     check("mixed case preserved",
           encrypt("AbC", 3), "DeF");
+      
+
+      check("mixed case preserved 2",
+          encrypt("AbC32 z1", 26), "AbC32 z1");
 }
 
 void testRoundTrip() {
@@ -159,7 +166,7 @@ void testEdgeShifts() {
           encrypt("def", -3), "abc");
 
       check("negative shift rotates backwards",
-          encrypt("def123def.", -3), "abc123abc.");
+          encrypt("def123DEF.", -3), "abc123ABC.");
 }
 
 /* ------------------------------------------------------------------
@@ -169,9 +176,10 @@ void testEdgeShifts() {
 int main() {
     testEncrypt();
     testDecrypt();
+
     testNonAlphabetic();
-//     testCase();
-//     testRoundTrip();
+    testCase();
+    testRoundTrip();
     testEdgeShifts();
 
     std::cout << "\n"

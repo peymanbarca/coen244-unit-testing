@@ -29,6 +29,8 @@ TEST(CaesarCipherTest, EncryptBasicAndShifts) {
 
     // A zero shift changes nothing.
     EXPECT_EQ(encrypt("hello", 0), "hello");
+
+    EXPECT_EQ(encrypt("def123DEF.", -3), "abc123ABC.");
 }
 
 TEST(CaesarCipherTest, DecryptBasicAndShifts) {
