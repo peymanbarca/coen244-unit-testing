@@ -5,6 +5,7 @@ system required — one `g++` command builds and runs the whole suite.
 
 ## Layout
 
+
 ```
 include/CaesarCipherEncryption.h        the specification (the oracle)
 src/CaesarCipherEncryption.cpp          correct implementation
